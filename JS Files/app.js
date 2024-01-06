@@ -27,11 +27,36 @@ document.addEventListener('DOMContentLoaded', () => {
     return filteredSet;
   };
 
-  const appendSearchResult = (result) => {
+  const appendSearchResult = async (result) => {
     const listItem = document.createElement('li');
     listItem.classList.add('search-result-item');
     listItem.textContent = result;
     searchResultsList.appendChild(listItem);
+
+    const jsonData = {
+      search: {
+        query: result,
+      },
+    };
+
+    try {
+      const response = await fetch('http://127.0.0.1:3000/searches', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsonData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('Search created successfully:', data);
+    } catch (error) {
+      console.error('Error creating search:', error);
+    }
   };
 
   searchInput.addEventListener('input', (event) => {

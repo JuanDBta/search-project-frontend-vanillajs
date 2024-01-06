@@ -75,7 +75,7 @@ Here is the link to my [Search Project Rails Backend App](https://github.com/Jua
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-<a href="https://juan-diaz.me/#">My Portfolio</a>
+<a href="https://github.com/JuanDBta/search-project-frontend-vanillajs">Helpjuice Test Project: Realtime Search Box</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

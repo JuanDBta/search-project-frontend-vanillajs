@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  margin-top: 5vw;
+  height: 5vw;
+}
+
+#search-box {
+  width: 100vw;
+  height: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+}
+
+input {
+  width: 40vw;
+  height: 6vw;
+  padding: 2vw;
+  border-radius: 5px;
+  border: 1px black solid;
+}
+
+#analytics {
+  width: 100vw;
+  height: 30vw;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#statistics-title {
+  cursor: pointer;
+}

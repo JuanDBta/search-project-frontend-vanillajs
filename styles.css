@@ -51,3 +51,7 @@ input {
 #searchResultsList {
   list-style-type: none;
 }
+
+.search-result-item {
+  color: red;
+}

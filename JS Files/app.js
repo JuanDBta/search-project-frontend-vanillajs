@@ -1,6 +1,13 @@
-document.addEventListener('DOMContentLoaded', async () => {
+import { appendSearchResult } from './post_search.js';
+import { getSearches, displaySearches } from './recent_searches.js';
+import { displayCountSearches } from './count_searches.js';
+import { displayWord } from './favorite_word.js';
+import { displayAverage } from './average_words_per_search.js';
+
+document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   let searchTimeout;
+  let getData;
 
   // Function to check if a search query is valid
   const isValidSearch = (value) => {
@@ -10,78 +17,39 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Function to clear search results
   const clearSearchResults = () => {
-  };
-
-  // Function to fetch user searches from the server
-  const getSearches = async () => {
-    try {
-      const response = await fetch('http://127.0.0.1:3000/show_searches');
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return await response.json();
-    } catch (error) {
-      console.error('Error fetching user searches:', error);
-      throw error;
-    }
-  };
-  const getData = await getSearches();
-
-  // Function to display searches in the user interface
-  const displaySearches = (getData) => {
-    const usersSearchesList = document.getElementById('user-searches');
-    usersSearchesList.innerHTML = '';
-
-    getData.forEach((search) => {
-      const listItem = document.createElement('li');
-      listItem.textContent = search.query;
-      usersSearchesList.appendChild(listItem);
-    });
-  };
-
-  // Function to append a new search result to the server
-  const appendSearchResult = async (result) => {
-    const jsonData = {
-      search: {
-        query: result,
-      },
-    };
-
-    try {
-      const response = await fetch('http://127.0.0.1:3000/searches', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(jsonData),
-      });
-
-      if (response.ok) {
-        const postData = await response.json();
-        console.log('Search created successfully:', postData);
-        displaySearches(getData);
-      } else {
-        console.error(`Failed to create search. HTTP error! Status: ${response.status}`);
-      }
-    } catch (error) {
-      console.error('Error creating search:', error);
-    }
+    // Implementation for clearing search results if needed
   };
 
   // Event listener for input changes in the search input
-  searchInput.addEventListener('input', async (event) => {
+  searchInput.addEventListener('input', (event) => {
     const inputValue = event.target.value.trim();
     clearTimeout(searchTimeout);
 
-    searchTimeout = setTimeout(async () => {
+    searchTimeout = setTimeout(() => {
       clearSearchResults();
       if (isValidSearch(inputValue)) {
-        await appendSearchResult(inputValue);
+        appendSearchResult(inputValue);
+        // Update recent searches after a new input
+        getSearches()
+          .then((data) => {
+            getData = data;
+            displaySearches(getData);
+          })
+          // Update total count of searches after a new input
+          .then(() => {
+            displayCountSearches();
+          });
       }
     }, 1500);
   });
 
-  // Fetch initial data and display searches when the page loads
-  displaySearches(getData);
+  displayCountSearches();
+  displayWord();
+  displayAverage();
+
+  getSearches()
+    .then((data) => {
+      getData = data;
+      displaySearches(getData);
+    });
 });

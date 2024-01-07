@@ -96,6 +96,21 @@ input {
   transform: scale(1.2);
 }
 
+#counts,
+#word,
+#average {
+  width: 15vw;
+  height: 17vw;
+  color: #fff;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 0.5vw;
+  font-size: 2.5vw;
+  font-weight: bold;
+  line-height: 4vw;
+}
+
 #user-searches {
   list-style-type: none;
   width: 60vw;

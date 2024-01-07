@@ -69,7 +69,15 @@ Here is the link to my [Search Project Rails Backend App](https://github.com/Jua
 - **[Added index.html]**
 - **[Added styles.css]**
 - **[Added .gitignore]**
-- **[Added /images]**
+- **[Installed linters]**
+- **[Added /JS files]**
+- **[Implemented JS modules]**
+- **[Displayed real time search bar]**
+- **[Displayed card showing total amount of searches]**
+- **[Displayed card showing favorite word]**
+- **[Displayed card showing average of words per search]**
+- **[Displayed card showing recent searches]**
+- **[Deployed in Render]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -102,6 +110,11 @@ Clone this repository to your desired folder:
 ### Usage
 
 To run the project, execute the following command:
+
+```sh
+  cd search-project-frontend-vanillajs
+  npm install
+```
 
 Open index.html using live server extension.
 

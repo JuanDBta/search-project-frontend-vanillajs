@@ -1,9 +1,11 @@
 import { appendSearchResult } from './post_search.js';
+import { getSearches, displaySearches } from './recent_searches.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   let searchTimeout;
-  
+  let getData;
+
   // Function to check if a search query is valid
   const isValidSearch = (value) => {
       const regex = /^(\S+\s+){1}\S+.{3,}$/;
@@ -24,24 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
         clearSearchResults();
         if (isValidSearch(inputValue)) {
           appendSearchResult(inputValue);
+          getSearches()
+          .then((data) => {
+          getData = data;
+          displaySearches(getData);
+          })
         }
       }, 1500);
     });
-    
-
-
-  
-  
-  
+    getSearches()
+    .then((data) => {
+      getData = data;
+      displaySearches(getData);
+    })
 });
-
-// Fetch initial data and display searches when the page loads
-  // getSearches()
-  //   .then((data) => {
-  //     getData = data;
-  //     displaySearches(getData);
-  //     displayCountSearches();
-  //   })
-  //   .catch((error) => {
-  //     console.error('Error getting initial data:', error);
-  //   });

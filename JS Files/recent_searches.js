@@ -1,22 +1,21 @@
-let getData;
-
 // Function to fetch user searches from the server
-const getSearches = () => {
-  return fetch('http://127.0.0.1:3000/show_searches')
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .catch((error) => {
-      console.error('Error fetching user searches:', error);
-      throw error;
-    });
+export const getSearches = async () => {
+  try {
+    const response = await fetch('http://127.0.0.1:3000/show_searches');
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching user searches:', error);
+    throw error;
+  }
 };
 
 // Function to display searches in the user interface
-const displaySearches = (data) => {
+export const displaySearches = (data) => {
   const usersSearchesList = document.getElementById('user-searches');
   usersSearchesList.innerHTML = '';
 

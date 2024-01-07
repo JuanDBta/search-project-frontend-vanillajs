@@ -103,6 +103,11 @@ Clone this repository to your desired folder:
 
 To run the project, execute the following command:
 
+```sh
+  cd search-project-frontend-vanillajs
+  npm install
+```
+
 Open index.html using live server extension.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #fff;
+  background: linear-gradient(to bottom, #efde6c, #8f7916);
   display: flex;
   width: 100vw;
   flex-direction: column;
@@ -16,6 +16,24 @@ header {
   text-align: center;
   margin-top: 1vw;
   height: 2vw;
+}
+
+h1 {
+  color: rgb(56, 48, 48);
+  font-size: 3vw;
+  animation: changeColor 1s infinite alternate;
+}
+
+@keyframes changeColor {
+  0% {
+    color: rgb(206, 72, 72);
+  }
+  50% {
+    color: rgb(130, 130, 150);
+  }
+  100% {
+    color: rgb(93, 194, 93);
+  }
 }
 
 #search-box {
@@ -49,6 +67,7 @@ input {
 
 #statistics-title {
   margin-bottom: 1vw;
+  color: rgb(56, 48, 48);
 }
 
 #cards {
@@ -65,9 +84,14 @@ input {
 .card {
   width: 15vw;
   height: 17vw;
-  background-color: rgb(182, 176, 160);
+  background-color:rgb(56, 48, 48);
   border-radius: 5px;
   border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.2);
 }
 
 #user-searches {

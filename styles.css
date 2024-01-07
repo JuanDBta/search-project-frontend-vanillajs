@@ -40,7 +40,7 @@ input {
 
 #analytics {
   width: 100vw;
-  height: 30vw;
+  height: auto;
   background-color: aqua;
   display: flex;
   flex-direction: column;
@@ -48,20 +48,9 @@ input {
   align-items: center;
 }
 
-#searchResultsList {
-  list-style-type: none;
-  width: 60vw;
-  height: 15vw;
-  background-color: green;
-}
-
-.search-result-item {
-  color: red;
-}
-
 #user-searches {
   list-style-type: none;
   width: 60vw;
-  height: 15vw;
+  height: auto;
   background-color: red;
 }

@@ -1,7 +1,7 @@
 // Function to fetch average word per seearch by user from the server
 export const average = async () => {
   try {
-    const response = await fetch('http://127.0.0.1:3000/average_words_per_search');
+    const response = await fetch('https://search-project-api.onrender.com/average_words_per_search');
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

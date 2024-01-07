@@ -6,7 +6,7 @@ export const appendSearchResult = async (result) => {
       },
     };
 
-    const response = await fetch('http://127.0.0.1:3000/searches', {
+    const response = await fetch('https://search-project-api.onrender.com/searches', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

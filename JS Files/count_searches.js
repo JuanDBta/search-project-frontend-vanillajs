@@ -1,7 +1,7 @@
 // Function to fetch count searches by user from the server
 export const countSearches = async () => {
   try {
-    const response = await fetch('http://127.0.0.1:3000/count_searches');
+    const response = await fetch('https://search-project-api.onrender.com/count_searches');
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

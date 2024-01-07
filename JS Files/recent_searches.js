@@ -1,7 +1,7 @@
 // Function to fetch user searches from the server
 export const getSearches = async () => {
   try {
-    const response = await fetch('http://127.0.0.1:3000/show_searches');
+    const response = await fetch('https://search-project-api.onrender.com/show_searches');
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

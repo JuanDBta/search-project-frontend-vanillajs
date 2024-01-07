@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const getSearches = async () => {
     try {
       const response = await fetch('http://127.0.0.1:3000/show_searches');
-  
+
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -26,12 +26,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       throw error;
     }
   };
+  const getData = await getSearches();
 
   // Function to display searches in the user interface
   const displaySearches = (getData) => {
     const usersSearchesList = document.getElementById('user-searches');
     usersSearchesList.innerHTML = '';
-  
+
     getData.forEach((search) => {
       const listItem = document.createElement('li');
       listItem.textContent = search.query;
@@ -79,9 +80,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         await appendSearchResult(inputValue);
       }
     }, 1500);
-  });  
-  
+  });
+
   // Fetch initial data and display searches when the page loads
-  const getData = await getSearches();
   displaySearches(getData);
 });

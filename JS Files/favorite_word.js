@@ -19,7 +19,7 @@ export const displayWord = async () => {
   try {
     const word = await favoriteWord();
     const wordCard = document.getElementById('word');
-    wordCard.textContent = `Your favorite word is ${word.most_frequent_word}`;
+    wordCard.textContent = `${word.most_frequent_word} is your go-to word`;
   } catch (error) {
     console.error('Error displaying user searches count:', error);
   }

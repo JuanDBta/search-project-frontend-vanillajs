@@ -14,43 +14,85 @@ body {
 
 header {
   text-align: center;
-  margin-top: 5vw;
-  height: 5vw;
+  margin-top: 1vw;
+  height: 2vw;
 }
 
 #search-box {
   width: 100vw;
-  height: 20vw;
+  height: 8vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: blueviolet;
+  margin-top: 1vw;
 }
 
 input {
-  width: 45vw;
-  height: 4vw;
+  width: 40vw;
+  height: 2.5vw;
   padding: 1vw;
   border-radius: 5px;
   border: 1px black solid;
   font-size: 1.5vw;
-  background-color: yellow;
+  background-color: #fff;
 }
 
 #analytics {
   width: 100vw;
-  height: auto;
-  background-color: aqua;
+  height: 35vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
+#statistics-title {
+  margin-bottom: 1vw;
+}
+
+#cards {
+  width: 80vw;
+  height: 20vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5vw;
+}
+
+.card {
+  width: 15vw;
+  height: 17vw;
+  background-color: rgb(182, 176, 160);
+  border-radius: 5px;
+  border: none;
+}
+
 #user-searches {
   list-style-type: none;
   width: 60vw;
-  height: auto;
-  background-color: red;
+  height: 9vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  margin-top: 0.5vw;
+}
+
+li {
+  background-color: rgb(56, 48, 48);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+  padding: 0.5vw;
+  height: 2vw;
+  border-radius: 5px;
+  color:#fff;
+  font-weight: bold;
 }

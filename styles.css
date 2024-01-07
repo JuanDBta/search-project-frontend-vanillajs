@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #fff;
+  background: linear-gradient(to bottom, #efde6c, #8f7916);
   display: flex;
   width: 100vw;
   flex-direction: column;
@@ -14,44 +14,111 @@ body {
 
 header {
   text-align: center;
-  margin-top: 5vw;
-  height: 5vw;
+  margin-top: 1vw;
+  height: 2vw;
+}
+
+h1 {
+  color: rgb(56, 48, 48);
+  font-size: 3vw;
+  animation: changeColor 1s infinite alternate;
+}
+
+@keyframes changeColor {
+  0% {
+    color: rgb(206, 72, 72);
+  }
+
+  50% {
+    color: rgb(130, 130, 150);
+  }
+
+  100% {
+    color: rgb(93, 194, 93);
+  }
 }
 
 #search-box {
   width: 100vw;
-  height: 20vw;
+  height: 8vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: blueviolet;
+  margin-top: 1vw;
 }
 
 input {
-  width: 45vw;
-  height: 4vw;
+  width: 40vw;
+  height: 2.5vw;
   padding: 1vw;
   border-radius: 5px;
   border: 1px black solid;
   font-size: 1.5vw;
-  background-color: yellow;
+  background-color: #fff;
 }
 
 #analytics {
   width: 100vw;
-  height: 30vw;
-  background-color: aqua;
+  height: 35vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-#searchResultsList {
-  list-style-type: none;
+#statistics-title {
+  margin-bottom: 1vw;
+  color: rgb(56, 48, 48);
 }
 
-.search-result-item {
-  color: red;
+#cards {
+  width: 80vw;
+  height: 20vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5vw;
+}
+
+.card {
+  width: 15vw;
+  height: 17vw;
+  background-color: rgb(56, 48, 48);
+  border-radius: 5px;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.2);
+}
+
+#user-searches {
+  list-style-type: none;
+  width: 60vw;
+  height: 9vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  margin-top: 0.5vw;
+}
+
+li {
+  background-color: rgb(56, 48, 48);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+  padding: 0.5vw;
+  height: 2vw;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
 }

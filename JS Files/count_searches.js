@@ -19,7 +19,6 @@ export const displayCountSearches = async () => {
   try {
     const getCountsData = await countSearches();
     const countsCard = document.getElementById('counts');
-    console.log(getCountsData);
     countsCard.textContent = `You have done ${getCountsData.searches_count} searches!`;
   } catch (error) {
     console.error('Error displaying user searches count:', error);

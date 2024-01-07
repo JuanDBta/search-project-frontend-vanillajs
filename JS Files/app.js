@@ -2,6 +2,7 @@ import { appendSearchResult } from './post_search.js';
 import { getSearches, displaySearches } from './recent_searches.js';
 import { displayCountSearches } from './count_searches.js';
 import { displayWord } from './favorite_word.js';
+import { displayAverage } from './average_words_per_search.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
@@ -44,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   displayCountSearches();
   displayWord();
+  displayAverage();
 
   getSearches()
     .then((data) => {

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   let searchTimeout;
 
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Function to clear search results
   const clearSearchResults = () => {
+    // Implementation for clearing search results if needed
   };
 
   // Function to fetch user searches from the server
@@ -26,7 +27,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       throw error;
     }
   };
-  const getData = await getSearches();
 
   // Function to display searches in the user interface
   const displaySearches = (getData) => {
@@ -68,49 +68,57 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   // Function to append a new search result to the server
-  const appendSearchResult = async (result) => {
+  const appendSearchResult = (result) => {
     const jsonData = {
       search: {
         query: result,
       },
     };
 
-    try {
-      const response = await fetch('http://127.0.0.1:3000/searches', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(jsonData),
-      });
-
-      if (response.ok) {
-        const postData = await response.json();
+    fetch('http://127.0.0.1:3000/searches', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(jsonData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(`Failed to create search. HTTP error! Status: ${response.status}`);
+        }
+      })
+      .then((postData) => {
         console.log('Search created successfully:', postData);
         displaySearches(getData);
         displayCountSearches();
-      } else {
-        console.error(`Failed to create search. HTTP error! Status: ${response.status}`);
-      }
-    } catch (error) {
-      console.error('Error creating search:', error);
-    }
+      })
+      .catch((error) => {
+        console.error('Error creating search:', error);
+      });
   };
 
   // Event listener for input changes in the search input
-  searchInput.addEventListener('input', async (event) => {
+  searchInput.addEventListener('input', (event) => {
     const inputValue = event.target.value.trim();
     clearTimeout(searchTimeout);
 
-    searchTimeout = setTimeout(async () => {
+    searchTimeout = setTimeout(() => {
       clearSearchResults();
       if (isValidSearch(inputValue)) {
-        await appendSearchResult(inputValue);
+        appendSearchResult(inputValue);
       }
     }, 1500);
   });
 
   // Fetch initial data and display searches when the page loads
-  displaySearches(getData);
-  displayCountSearches();
+  getSearches()
+    .then((getData) => {
+      displaySearches(getData);
+      displayCountSearches();
+    })
+    .catch((error) => {
+      console.error('Error getting initial data:', error);
+    });
 });

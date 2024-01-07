@@ -28,9 +28,11 @@ h1 {
   0% {
     color: rgb(206, 72, 72);
   }
+
   50% {
     color: rgb(130, 130, 150);
   }
+
   100% {
     color: rgb(93, 194, 93);
   }
@@ -84,7 +86,7 @@ input {
 .card {
   width: 15vw;
   height: 17vw;
-  background-color:rgb(56, 48, 48);
+  background-color: rgb(56, 48, 48);
   border-radius: 5px;
   border: none;
   transition: transform 0.3s ease;
@@ -117,6 +119,6 @@ li {
   padding: 0.5vw;
   height: 2vw;
   border-radius: 5px;
-  color:#fff;
+  color: #fff;
   font-weight: bold;
 }

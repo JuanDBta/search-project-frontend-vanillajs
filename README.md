@@ -31,7 +31,7 @@
 
 **[Realtime Search Box]** Vanilla JS frontend for our Realtime Search Analytics. Provides a sleek, responsive interface for users to search articles. Delivers real-time data visualization of search trends. Simple, fast, and user-centric.
 
-Here is the source link to my [Search Project Rails Backend App Live Source](https://github.com/JuanDBta/search-project-backend-rails)
+Here is the source link to my [Search Project Rails Backend App Source](https://github.com/JuanDBta/search-project-backend-rails)
 
 
 ## 🛠 Built With <a name="built-with"></a>

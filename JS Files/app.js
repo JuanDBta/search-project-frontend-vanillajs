@@ -1,5 +1,6 @@
 import { appendSearchResult } from './post_search.js';
 import { getSearches, displaySearches } from './recent_searches.js';
+import { countSearches, displayCountSearches } from './count_searches.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
@@ -31,9 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
           getData = data;
           displaySearches(getData);
           })
+          .then(() => {
+            displayCountSearches();
+          });
         }
       }, 1500);
     });
+
+    displayCountSearches();
+
     getSearches()
     .then((data) => {
       getData = data;

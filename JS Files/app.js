@@ -1,6 +1,7 @@
 import { appendSearchResult } from './post_search.js';
 import { getSearches, displaySearches } from './recent_searches.js';
 import { displayCountSearches } from './count_searches.js';
+import { displayWord } from './favorite_word.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   displayCountSearches();
+  displayWord();
 
   getSearches()
     .then((data) => {

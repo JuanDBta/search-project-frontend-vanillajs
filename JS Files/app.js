@@ -34,13 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
           .then((data) => {
             getData = data;
             displaySearches(getData);
+            displayCountSearches();
+            displayWord();
+            displayAverage();
           })
           // Update total count of searches after a new input
           .then(() => {
             displayCountSearches();
           });
       }
-    }, 1500);
+    }, 750);
   });
 
   displayCountSearches();

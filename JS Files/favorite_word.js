@@ -1,7 +1,7 @@
 // Function to fetch favorite word by user from the server
 export const favoriteWord = async () => {
   try {
-    const response = await fetch('http://127.0.0.1:3000/favorite_word');
+    const response = await fetch('https://search-project-api.onrender.com/favorite_word');
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

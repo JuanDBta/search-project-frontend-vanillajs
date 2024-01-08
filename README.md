@@ -13,7 +13,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+- [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -31,7 +31,7 @@
 
 **[Realtime Search Box]** Vanilla JS frontend for our Realtime Search Analytics. Provides a sleek, responsive interface for users to search articles. Delivers real-time data visualization of search trends. Simple, fast, and user-centric.
 
-Here is the link to my [Search Project Rails Backend App](https://github.com/JuanDBta/search-project-backend-rails)
+Here is the source link to my [Search Project Rails Backend App Source](https://github.com/JuanDBta/search-project-backend-rails)
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -83,7 +83,9 @@ Here is the link to my [Search Project Rails Backend App](https://github.com/Jua
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-<a href="https://github.com/JuanDBta/search-project-frontend-vanillajs">Helpjuice Test Project: Realtime Search Box</a>
+Please, try my app:
+
+<a href="https://search-project.onrender.com/">Helpjuice Test Project: Realtime Search Box</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -133,6 +135,7 @@ Open index.html using live server extension.
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[Add Animations and Transitions]**
+- [ ] **[Add more analytics cards**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
